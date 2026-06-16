@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Use xwinwrap-git from AUR (https://github.com/takase1121/xwinwrap)
 
@@ -45,7 +45,7 @@ function setwall() {
             # Use gifview to play gif if current wallpaper is .gif
             sleep 0.01
             printf "$GREEN[INFO]$NC Setting wallpaper to $var.gif\n"
-            xwinwrap $args -- gifview -w %WID $HOME/.config/video-wallpapers/wallpapers/$var.gif --geometry 2560x1440 -a >/dev/null &
+            xwinwrap $args -- gifview -wid WID $HOME/.config/video-wallpapers/wallpapers/$var.gif -g 1920x1200 -a >/dev/null &
         fi
     fi
 }
@@ -61,10 +61,14 @@ else
 fi
 
 if [[ $VIDEOPLAYER == "mplayer" ]]; then
-    videoargs="-wid %WID -quiet -nosound $HOME/.config/video-wallpapers/wallpapers/$var.mp4 -loop 0 -nolirc -nomouseinput"
+    videoargs="-wid WID -quiet -nosound -x 1920 -y 1200  $HOME/.config/video-wallpapers/wallpapers/$var.mp4 -loop 0 -nolirc -nomouseinput"
 else
-    videoargs="-wid %WID -quiet --no-audio $HOME/.config/video-wallpapers/wallpapers/$var.mp4 -loop"
+    videoargs="-wid WID -quiet --no-audio -x 1920 -y 1200 $HOME/.config/video-wallpapers/wallpapers/$var.mp4 -loop"
 fi
+
+# You might need to fix the geometry to fit the video to the screen
+# By using -x <width> -y <height>
+# -zoom didnt work for my case, but you might like to try that
 
 setwall
 
