@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=setwall
+Exec=$HOME/.config/video-wallpapers/setwall
+Comment=Script to set wallpaper
