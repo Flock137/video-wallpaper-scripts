@@ -174,11 +174,19 @@ X-GNOME-Autostart-enabled=true
 Comment=Script to set wallpaper
 ```
 
+# Desktop Launcher 
+
+Copy the `setwall.desktop` to your executable path, either in local (`~/.local/share/applications`) or system-wide (`~/usr/share/applications`). 
+
+It's more recommended that you put it in local
+
 ---
 
 #### RAM consumption
 
-Base on my tests, mplayer only takes up less tha 300MB RAM. It should not cause significant slowdowns on your system.
+Base on my tests, mplayer only takes up less than 300MB RAM. It should not cause significant slowdowns on your system. 
+
+However, for machines with no dedicated GPU, be expected that your laptop will be heated up a bit. Otherwise, do consider to let your GPU handle your wallpaper within some forms or manner. 
 
 #### Why not mpv?
 
