@@ -16,6 +16,8 @@ Tested working on Arch with:
 - Awesome
 - dwm
 
+I (Flock137) have also tested on Debian, it works well with xfce4. It is expected that it should also work on other xfce4.
+
 Not tested on other distros and BSPWM
 
 ##### Change wallpaper quickly using setwall script
